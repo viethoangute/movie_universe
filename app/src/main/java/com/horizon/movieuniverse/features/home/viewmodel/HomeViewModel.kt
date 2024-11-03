@@ -17,15 +17,19 @@ class HomeViewModel @Inject constructor(
 
     fun getRecentlyAddedMovies() {
         viewModelScope.launch {
-            val response = movieRepository.getRecentlyAddedMovies()
-            if (response.isSuccessful) {
-                val itemToShow = mutableListOf<SliderItem>()
-                response.body()?.items?.map { item ->
-                    val id = item.id.toString()
-                    val imageURL = item.posterUrl.toString()
-                    itemToShow.add(SliderItem(id, imageURL))
+            try {
+                val response = movieRepository.getRecentlyAddedMovies()
+                if (response.isSuccessful) {
+                    val itemToShow = mutableListOf<SliderItem>()
+                    response.body()?.items?.map { item ->
+                        val id = item.id.toString()
+                        val imageURL = item.posterUrl.toString()
+                        itemToShow.add(SliderItem(id, imageURL))
+                    }
+                    sliderItems.postValue(itemToShow)
                 }
-                sliderItems.postValue(itemToShow)
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
         }
     }
