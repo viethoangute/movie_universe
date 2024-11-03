@@ -1,0 +1,60 @@
+# Built application files
+*.apk
+*.ap_
+
+# Java class files
+*.class
+
+# Gradle files
+.gradle/
+build/
+*/build/
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Local configuration file (local.properties)
+local.properties
+
+# Android Studio files
+.idea/
+*.iml
+
+# Miscellaneous files
+*.hprof
+*.log
+*.so
+*.jar
+*.war
+
+# User-specific files
+*.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+
+# Android Studio captures
+captures/
+
+# Kotlin specific files
+*.kotlin_module
+
+# Coverage files
+*.coverage
+
+# .env files (if you use any for environment variables)
+.env
+.env.local
+
+# Configuration files for the build system
+*.orig
+
+# External libraries
+.externalNativeBuild/
+.cxx/
+
+# Files for Jetpack Compose Preview
+.idea/caches/
+
+# Generated files by the Android build process
+*/generated/
