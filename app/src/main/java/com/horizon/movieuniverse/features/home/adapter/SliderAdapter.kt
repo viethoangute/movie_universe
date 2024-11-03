@@ -23,8 +23,10 @@ class SliderAdapter(private val items: List<SliderItem>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: SliderViewHolder, position: Int) {
-        val actualPosition = position % items.size
-        holder.bind(items[actualPosition])
+        if (items.isNotEmpty()) {
+            val actualPosition = position % items.size
+            holder.bind(items[actualPosition])
+        }
     }
 
     override fun getItemCount(): Int {

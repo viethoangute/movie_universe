@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".features.home.HomeFragment">
+    tools:context=".features.home.view.HomeFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/sliderMovies"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        android:visibility="gone"
-        android:paddingStart="70dp"
-        android:paddingEnd="70dp"
+        android:paddingStart="55dp"
+        android:paddingEnd="55dp"
         android:paddingTop="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
