@@ -1,4 +1,4 @@
-package com.horizon.movieuniverse.features.home
+package com.horizon.movieuniverse.features.home.view
 
 import android.annotation.SuppressLint
 import androidx.fragment.app.viewModels
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.horizon.movieuniverse.databinding.FragmentHomeBinding
+import com.horizon.movieuniverse.features.home.viewmodel.HomeViewModel
 import com.horizon.movieuniverse.features.home.adapter.SliderAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.abs
@@ -52,16 +53,13 @@ class HomeFragment : Fragment() {
             with(binding) {
                 if (items.isNotEmpty()) {
                     sliderAdapter = SliderAdapter(items)
-                    sliderMovies.visibility = View.VISIBLE
                     sliderMovies.adapter = sliderAdapter
                     sliderMovies.setPageTransformer(compositePageTransformer)
                     sliderMovies.currentItem = items.size / 2
-                } else {
-                    sliderMovies.visibility = View.GONE
                 }
             }
         }
-        viewModel.fetchListSlider()
+        viewModel.getRecentlyAddedMovies()
     }
 
     @SuppressLint("ClickableViewAccessibility")
