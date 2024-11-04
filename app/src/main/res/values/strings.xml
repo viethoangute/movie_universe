@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Movie Universe</string>
     <string name="main_app_title">Movie Universe</string>
+    <string name="phim_le">Phim lẻ</string>
+    <string name="phim_bo">Phim bộ</string>
+    <string name="hoat_hinh">Hoạt Hình</string>
+    <string name="tv_shows">TV Shows</string>
 </resources>
