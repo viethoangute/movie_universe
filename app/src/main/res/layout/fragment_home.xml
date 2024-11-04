@@ -1,20 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".features.home.view.HomeFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/sliderMovies"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:paddingStart="55dp"
-        android:paddingEnd="55dp"
-        android:paddingTop="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/sliderMovies"
+            android:layout_width="0dp"
+            android:layout_height="400dp"
+            android:paddingStart="55dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="55dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvPhimLe"
+            style="@style/NormalTitleText"
+            android:visibility="gone"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sliderMovies"
+            android:text="@string/phim_le" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvPhimLe"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhimLe" />
+
+        <TextView
+            android:id="@+id/tvPhimBo"
+            style="@style/NormalTitleText"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcvPhimLe"
+            android:text="@string/phim_bo" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvPhimBo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhimBo" />
+
+        <TextView
+            android:id="@+id/tvHoatHinh"
+            style="@style/NormalTitleText"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcvPhimBo"
+            android:text="@string/hoat_hinh" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvHoatHinh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHoatHinh" />
+
+        <TextView
+            android:id="@+id/tvTvShows"
+            style="@style/NormalTitleText"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcvHoatHinh"
+            android:text="@string/tv_shows" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvTvShows"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTvShows" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

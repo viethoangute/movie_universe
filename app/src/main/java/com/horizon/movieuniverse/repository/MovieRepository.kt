@@ -1,5 +1,6 @@
 package com.horizon.movieuniverse.repository
 
+import com.horizon.movieuniverse.model.MovieCategoryResponse
 import com.horizon.movieuniverse.model.RecentlyAddedMovies
 import com.horizon.movieuniverse.network.MovieApi
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +14,12 @@ class MovieRepository @Inject constructor(
     suspend fun getRecentlyAddedMovies() : Response<RecentlyAddedMovies> {
         return withContext(Dispatchers.IO) {
             movieApi.getRecentlyAddedMovies(1)
+        }
+    }
+
+    suspend fun getMoviesByCategory(categoryId: String) : Response<MovieCategoryResponse> {
+        return withContext(Dispatchers.IO) {
+            movieApi.getMoviesByCategory(categoryId)
         }
     }
 }
